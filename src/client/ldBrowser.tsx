@@ -1,7 +1,7 @@
 import { Component, ReactNode } from 'react';
 import { initialize, LDFlagChangeset, LDFlagSet } from 'launchdarkly-js-client-sdk';
 
-import { Context as HocState, Provider } from '../shared/context';
+import { LDContext as HocState, Provider } from '../shared/context';
 import { getFlattenedFlagsFromChangeset } from '../shared/utils';
 
 type LDBrowserProps = { children: ReactNode };

@@ -1,13 +1,13 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import React, { ReactNode } from 'react';
-import { init, LDContext } from 'launchdarkly-node-server-sdk';
+import { init, LDUser } from 'launchdarkly-node-server-sdk';
 
 import { Provider } from '../shared/context';
 
 // TODO: fix this
 export let ldClient: any;
 
-const createProvider = async (sdkKey: string, user: LDContext) => {
+const createProvider = async (sdkKey: string, user: LDUser) => {
   if (!ldClient) {
     ldClient = await init(sdkKey);
     await ldClient.waitForInitialization();
