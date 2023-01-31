@@ -1,5 +1,3 @@
-import React from 'react';
-
 import useFlags from './useFlags';
 import useLDUser from './useLDUser';
 
