@@ -1,4 +1,4 @@
-import { LDClient, LDFlagSet, LDOptions, LDUser } from 'launchdarkly-js-client-sdk';
+import { LDClient, LDContext,LDFlagSet, LDOptions} from 'launchdarkly-js-client-sdk';
 
 export interface ProviderConfig {
   /**
@@ -9,12 +9,12 @@ export interface ProviderConfig {
   clientSideID: string;
 
   /**
-   * A LaunchDarkly user object. If unspecified, a new user with a
-   * random key will be created and used. This user's key will remain constant across browser sessions.
+   * A LaunchDarkly context object. If unspecified, a new context with a
+   * random key will be created and used. This context's key will remain constant across browser sessions.
    *
-   * @see https://docs.launchdarkly.com/sdk/features/user-config#javascript
+   * @see https://docs.launchdarkly.com/sdk/features/user-context-config#javascript
    */
-  user?: LDUser;
+  user?: LDContext;
 
   /**
    * If set to true, the ldClient will not be initialized until the user prop has been defined.

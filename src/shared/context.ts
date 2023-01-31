@@ -1,14 +1,15 @@
 import { createContext } from 'react';
-import type { LDClient as LDJSClient, LDFlagSet, LDUser } from 'launchdarkly-js-client-sdk';
+import type { LDClient as LDJSClient, LDContext,LDFlagSet } from 'launchdarkly-js-client-sdk';
 
-interface LDContext {
+interface Context {
   flags: LDFlagSet;
   ldClient?: LDJSClient;
-  user?: LDUser;
+  user?: LDContext;
 }
 
-const context = createContext<LDContext>({ flags: {}, ldClient: undefined, user: undefined });
+const context = createContext<Context>({ flags: {}, ldClient: undefined, user: undefined });
 const { Provider, Consumer } = context;
 
-export { Provider, Consumer, LDContext };
+export { Provider, Consumer};
+export type {Context}
 export default context;
