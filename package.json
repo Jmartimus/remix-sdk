@@ -15,6 +15,11 @@
     "lib",
     "src"
   ],
+  "exports": {
+    "./client": "./lib/client/index.js",
+    "./server": "./lib/server/index.js",
+    "./shared": "./lib/shared/index.js"
+  },
   "scripts": {
     "build": "tsc",
     "lint": "eslint --cache --quiet src/**/*.ts*",
