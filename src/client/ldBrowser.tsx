@@ -14,7 +14,7 @@ class LDBrowser extends Component<LDBrowserProps, HocState> {
     const { ssrFlags, clientSideID, ldUser } = window;
 
     console.log(`initializing ld client with ${clientSideID}...`);
-    const ldClient = initialize(clientSideID, ldUser, { bootstrap: ssrFlags });
+    const ldClient = initialize(clientSideID, ldUser, { bootstrap: ssrFlags, streaming: false });
 
     ldClient.on('change', (changes: LDFlagChangeset) => {
       const flattened: LDFlagSet = getFlattenedFlagsFromChangeset(changes, ssrFlags);

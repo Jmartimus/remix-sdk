@@ -7,7 +7,7 @@ import { Provider } from '../shared/context';
 // TODO: fix this
 export let ldClient: any;
 
-const createProvider = async (sdkKey: string, user: LDUser, options: LDOptions) => {
+const createProvider = async (sdkKey: string, user: LDUser, options: LDOptions | undefined) => {
   if (!ldClient) {
     ldClient = await init(sdkKey, options);
     await ldClient.waitForInitialization();
