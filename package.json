@@ -9,7 +9,7 @@
     "react",
     "sdk",
     "remix"
-  ], 
+  ],
   "types": "lib/index.d.ts",
   "files": [
     "lib",
