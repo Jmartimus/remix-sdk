@@ -49,8 +49,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-prettier", "virtual:45a637998e6fe64e968a48401fb50178689a050e75287d02cfe87a165dd5e18b54574d54de75a1526bfa1aa6524fd031360bf30eaf427bb7ddcf6a380d2de66e#npm:4.0.0"],\
             ["eslint-plugin-react", "virtual:45a637998e6fe64e968a48401fb50178689a050e75287d02cfe87a165dd5e18b54574d54de75a1526bfa1aa6524fd031360bf30eaf427bb7ddcf6a380d2de66e#npm:7.30.0"],\
             ["eslint-plugin-simple-import-sort", "virtual:45a637998e6fe64e968a48401fb50178689a050e75287d02cfe87a165dd5e18b54574d54de75a1526bfa1aa6524fd031360bf30eaf427bb7ddcf6a380d2de66e#npm:7.0.0"],\
-            ["launchdarkly-js-client-sdk", "npm:2.24.2"],\
-            ["launchdarkly-node-server-sdk", "npm:6.4.3"],\
+            ["launchdarkly-js-client-sdk", "npm:3.1.1"],\
+            ["launchdarkly-node-server-sdk", "npm:7.0.1"],\
             ["lodash.camelcase", "npm:4.3.0"],\
             ["prettier", "npm:2.6.2"],\
             ["react", "npm:18.1.0"],\
@@ -2340,33 +2340,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["launchdarkly-js-client-sdk", [\
-        ["npm:2.24.2", {\
-          "packageLocation": "./.yarn/cache/launchdarkly-js-client-sdk-npm-2.24.2-6ad6675b82-c12564e4ee.zip/node_modules/launchdarkly-js-client-sdk/",\
+        ["npm:3.1.1", {\
+          "packageLocation": "./.yarn/cache/launchdarkly-js-client-sdk-npm-3.1.1-50f0b24685-1ce7746edd.zip/node_modules/launchdarkly-js-client-sdk/",\
           "packageDependencies": [\
-            ["launchdarkly-js-client-sdk", "npm:2.24.2"],\
+            ["launchdarkly-js-client-sdk", "npm:3.1.1"],\
             ["escape-string-regexp", "npm:4.0.0"],\
-            ["launchdarkly-js-sdk-common", "npm:3.8.2"]\
+            ["launchdarkly-js-sdk-common", "npm:5.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["launchdarkly-js-sdk-common", [\
-        ["npm:3.8.2", {\
-          "packageLocation": "./.yarn/cache/launchdarkly-js-sdk-common-npm-3.8.2-e253c966d2-ad8725c4fc.zip/node_modules/launchdarkly-js-sdk-common/",\
+        ["npm:5.0.2", {\
+          "packageLocation": "./.yarn/cache/launchdarkly-js-sdk-common-npm-5.0.2-45abc65ce6-f83d4ba04a.zip/node_modules/launchdarkly-js-sdk-common/",\
           "packageDependencies": [\
-            ["launchdarkly-js-sdk-common", "npm:3.8.2"],\
+            ["launchdarkly-js-sdk-common", "npm:5.0.2"],\
             ["base64-js", "npm:1.5.1"],\
             ["fast-deep-equal", "npm:2.0.1"],\
-            ["uuid", "npm:3.4.0"]\
+            ["uuid", "npm:8.3.2"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["launchdarkly-node-server-sdk", [\
-        ["npm:6.4.3", {\
-          "packageLocation": "./.yarn/cache/launchdarkly-node-server-sdk-npm-6.4.3-287f1d117b-6c6c1dd075.zip/node_modules/launchdarkly-node-server-sdk/",\
+        ["npm:7.0.1", {\
+          "packageLocation": "./.yarn/cache/launchdarkly-node-server-sdk-npm-7.0.1-43953b3c0e-83a24c6157.zip/node_modules/launchdarkly-node-server-sdk/",\
           "packageDependencies": [\
-            ["launchdarkly-node-server-sdk", "npm:6.4.3"],\
+            ["launchdarkly-node-server-sdk", "npm:7.0.1"],\
             ["async", "npm:3.2.4"],\
             ["launchdarkly-eventsource", "npm:1.4.4"],\
             ["lru-cache", "npm:6.0.0"],\
@@ -2399,8 +2399,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-prettier", "virtual:45a637998e6fe64e968a48401fb50178689a050e75287d02cfe87a165dd5e18b54574d54de75a1526bfa1aa6524fd031360bf30eaf427bb7ddcf6a380d2de66e#npm:4.0.0"],\
             ["eslint-plugin-react", "virtual:45a637998e6fe64e968a48401fb50178689a050e75287d02cfe87a165dd5e18b54574d54de75a1526bfa1aa6524fd031360bf30eaf427bb7ddcf6a380d2de66e#npm:7.30.0"],\
             ["eslint-plugin-simple-import-sort", "virtual:45a637998e6fe64e968a48401fb50178689a050e75287d02cfe87a165dd5e18b54574d54de75a1526bfa1aa6524fd031360bf30eaf427bb7ddcf6a380d2de66e#npm:7.0.0"],\
-            ["launchdarkly-js-client-sdk", "npm:2.24.2"],\
-            ["launchdarkly-node-server-sdk", "npm:6.4.3"],\
+            ["launchdarkly-js-client-sdk", "npm:3.1.1"],\
+            ["launchdarkly-node-server-sdk", "npm:7.0.1"],\
             ["lodash.camelcase", "npm:4.3.0"],\
             ["prettier", "npm:2.6.2"],\
             ["react", "npm:18.1.0"],\
@@ -3577,13 +3577,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["uuid", [\
-        ["npm:3.4.0", {\
-          "packageLocation": "./.yarn/cache/uuid-npm-3.4.0-4fd8ef88ad-58de2feed6.zip/node_modules/uuid/",\
-          "packageDependencies": [\
-            ["uuid", "npm:3.4.0"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:8.3.2", {\
           "packageLocation": "./.yarn/cache/uuid-npm-8.3.2-eca0baba53-5575a8a75c.zip/node_modules/uuid/",\
           "packageDependencies": [\

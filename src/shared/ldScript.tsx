@@ -8,6 +8,7 @@ const LDScript = ({ clientSideID }: LDScriptProps) => {
   const user = JSON.stringify(useLDUser(), null, 2);
   const windowVars = `window.clientSideID='${clientSideID}';window.ssrFlags=${flags};window.ldUser=${user};`;
   return (
+    // eslint-disable-next-line react/react-in-jsx-scope
     <script
       dangerouslySetInnerHTML={{
         // eslint-disable-next-line @typescript-eslint/naming-convention
