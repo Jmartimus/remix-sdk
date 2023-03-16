@@ -1,5 +1,5 @@
 import { Component, ReactNode } from 'react';
-import { LDContext as HocState } from '../shared/context';
+import { LDReactContext as HocState } from '../shared/context';
 declare type LDBrowserProps = {
     children: ReactNode;
 };
