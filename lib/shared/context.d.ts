@@ -1,9 +1,8 @@
 import type { LDClient as LDJSClient, LDContext, LDFlagSet } from 'launchdarkly-js-client-sdk';
-import type { LDClient as LDNodeClient } from 'launchdarkly-node-server-sdk';
-declare type LDRemixClient = LDJSClient | LDNodeClient | undefined;
+declare type LDRemixClient = LDJSClient | undefined;
 interface LDReactContext {
     flags: LDFlagSet;
-    ldClient?: LDRemixClient;
+    ldClient?: LDJSClient;
     user?: LDContext;
 }
 declare const context: import("react").Context<LDReactContext>;

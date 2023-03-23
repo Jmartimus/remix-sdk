@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import { LDClient, LDOptions, LDSingleKindContext } from 'launchdarkly-node-server-sdk';
-export declare let ldClient: LDClient;
+import { LDOptions, LDSingleKindContext } from 'launchdarkly-node-server-sdk';
+export declare let ldClient: any;
 declare const createProvider: (sdkKey: string, user: LDSingleKindContext, options: LDOptions | undefined) => Promise<({ children }: {
     children: ReactNode;
 }) => JSX.Element>;
