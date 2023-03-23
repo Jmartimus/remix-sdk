@@ -1,11 +1,10 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import React, { ReactNode } from 'react';
-import { init, LDOptions,LDSingleKindContext} from 'launchdarkly-node-server-sdk';
+import { init, LDClient, LDOptions,LDSingleKindContext} from 'launchdarkly-node-server-sdk';
 
 import { Provider } from '../shared/context';
 
-// TODO: fix this
-export let ldClient: any;
+export let ldClient: LDClient;
 
 const createProvider = async (sdkKey: string, user: LDSingleKindContext, options: LDOptions | undefined) => {
   if (!ldClient) {
@@ -14,13 +13,12 @@ const createProvider = async (sdkKey: string, user: LDSingleKindContext, options
   }
 
   console.log('Initialized ld node client...');
-  let flags = await ldClient.allFlagsState(user);
-  flags = flags.toJSON();
+  const flags = await ldClient.allFlagsState(user);
   const LDProvider = ({ children }: { children: ReactNode }) => {
     return (
       <Provider
         value={{
-          flags,
+          flags: flags.toJSON(),
           ldClient,
           user,
         }}

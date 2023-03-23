@@ -1,39 +1,32 @@
-import { Component, ReactNode } from 'react';
-import { initialize, LDFlagChangeset, LDFlagSet } from 'launchdarkly-js-client-sdk';
+import { ReactNode, useState } from 'react';
+import { initialize, LDClient, LDFlagChangeset, LDFlagSet } from 'launchdarkly-js-client-sdk';
 
 import { LDReactContext as HocState, Provider } from '../shared/context';
 import { getFlattenedFlagsFromChangeset } from '../shared/utils';
 
 type LDBrowserProps = { children: ReactNode };
 
-class LDBrowser extends Component<LDBrowserProps, HocState> {
-  readonly state: Readonly<HocState>;
+let ldClient: LDClient;
 
-  constructor(props: LDBrowserProps) {
-    super(props);
+const LDBrowser = (props: LDBrowserProps) => {
     const { ssrFlags, clientSideID, ldUser } = window;
-
-    console.log(`initializing ld client with ${clientSideID}...`);
-    const ldClient = initialize(clientSideID, ldUser, { bootstrap: ssrFlags, streaming: false });
+    const [state, setState] = useState<HocState>({flags: ssrFlags,
+      ldClient: undefined,
+      user: ldUser});
+    if (!ldClient) {
+      ldClient = initialize(clientSideID, ldUser, { bootstrap: ssrFlags, streaming: false }); 
+      ldClient.waitUntilReady().then(() => {
+        setState(({ flags }) => ({ flags, ldClient, user: ldClient.getContext() }))}) 
+      }
 
     ldClient.on('change', (changes: LDFlagChangeset) => {
       const flattened: LDFlagSet = getFlattenedFlagsFromChangeset(changes, ssrFlags);
       if (Object.keys(flattened).length > 0) {
-        this.setState(({ flags }) => ({ flags: { ...flags, ...flattened } }));
+        setState(({ flags }) => ({ flags: { ...flags, ...flattened } }));
       }
     });
 
-    this.state = {
-      flags: ssrFlags,
-      ldClient,
-      user: ldUser,
-    };
-  }
-
-  render() {
     // eslint-disable-next-line react/react-in-jsx-scope
-    return <Provider value={this.state}>{this.props.children}</Provider>;
-  }
-}
+    return <Provider value={state}>{props.children}</Provider>;}
 
 export default LDBrowser;
