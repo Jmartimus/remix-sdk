@@ -1,3 +1,2 @@
-/// <reference types="launchdarkly-js-client-sdk" />
-declare const useClient: () => import("launchdarkly-js-client-sdk").LDClient | undefined;
+declare const useClient: () => import("./context").LDRemixClient;
 export default useClient;
