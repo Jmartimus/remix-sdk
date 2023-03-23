@@ -1,10 +1,11 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import React, { ReactNode } from 'react';
-import { init, LDClient, LDOptions,LDSingleKindContext} from 'launchdarkly-node-server-sdk';
+import { init,LDOptions,LDSingleKindContext} from 'launchdarkly-node-server-sdk';
 
 import { Provider } from '../shared/context';
 
-export let ldClient: LDClient;
+// TODO: fix this
+export let ldClient: any;
 
 const createProvider = async (sdkKey: string, user: LDSingleKindContext, options: LDOptions | undefined) => {
   if (!ldClient) {
