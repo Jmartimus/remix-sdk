@@ -15,6 +15,21 @@ const createProvider = async (sdkKey: string, user: LDSingleKindContext, options
 
   console.log('Initialized ld node client...');
   const flags = await ldClient.allFlagsState(user);
+  const flagsWithValues: ldVariations = flags.toJSON();
+  
+  // After client is initialized, we loop through the flags and call the variation method on experiment flags.
+  await ldClient.waitForInitialization().then(() => {
+    Object.entries(flagsWithValues.$flagsState).forEach(
+      ([flagName, flagValue]) => {
+          if (flagValue?.reason?.inExperiment) {
+            // produces a feature event, which is necessary for a user to be considered a part of an experiment.
+              ldClient.variation(flagName, user);
+
+          }
+      },
+  )})
+  .catch((err: any) => console.error(err))
+
   const LDProvider = ({ children }: { children: ReactNode }) => {
     return (
       <Provider

@@ -7,4 +7,18 @@ declare global {
     ldUser: LDContext;
     clientSideID: string;
   }
+
+  type ldFlag = {
+    reason?: { inExperiment: boolean; kind: string };
+    trackEvents?: boolean;
+    trackReason?: boolean;
+    variation: number;
+    version: number;
+  };
+  
+  type flagStates = Record<string, ldFlag>;
+  
+  type ldVariations = {
+    $flagsState: flagStates;
+  };
 }
